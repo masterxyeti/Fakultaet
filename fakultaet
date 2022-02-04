@@ -1,0 +1,29 @@
+using System;
+
+namespace Fakultaet
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("+++Fakultaetsrechner+++");
+            Console.WriteLine("Bitte geben Sie die zu fakultierende Zahl ein: ");
+            int i = int.Parse(Console.ReadLine());
+
+            int original = i;
+            ulong ergebnis = Convert.ToUInt64(i);
+            
+            Console.Write("Die Berechnung ist: {0}", i);
+            while(i > 1)
+            {
+                Console.Write(" * {0}",--i);
+                ergebnis *= Convert.ToUInt64(i);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Die Fakultaet von {0} ist {1}",original, ergebnis);
+            
+
+            Console.ReadKey();
+        }
+    }
+}
